@@ -9,13 +9,11 @@ export default (state, action) => {
         pokemons: action.payload,
       }
     case SEARCH_POKEMON:
-      console.log(action.payload)
       return {
         ...state,
         pokemon: action.payload,
       }
     case MY_POKEMONS:
-      console.log(action.payload)
       return {
         ...state,
         myPokemons: action.payload,

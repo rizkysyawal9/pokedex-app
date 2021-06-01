@@ -9,14 +9,12 @@ export default function Card({ pokeId, title, image, isMyPokemon }) {
   useEffect(() => {
     if (!isMyPokemon) {
       let number = pokemonContext.getOwnedNumberOfPokemon(pokeId)
-      console.log(number)
       setOwned(number)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <CardGroup primary>
-      {/* <img src={image} alt="" className="banner" lazy /> */}
       <LazyLoadImage
         src={image}
         alt="pokemon"

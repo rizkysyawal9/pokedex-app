@@ -36,8 +36,6 @@ const PokemonState = (props) => {
           sprite: pokemonImage,
         }
       })
-      console.log(state.myPokemons)
-      console.log(payload)
       dispatch({
         type: GET_POKEMON,
         payload: payload,
@@ -67,7 +65,6 @@ const PokemonState = (props) => {
         ...pokemon.data,
         sprite: `${pokeImageUrl}/${id}.png`,
       }
-      console.log(payload)
       dispatch({
         type: SEARCH_POKEMON,
         payload: payload,
@@ -79,9 +76,7 @@ const PokemonState = (props) => {
 
   //function to get my pokemons
   const getMyPokemons = async () => {
-    console.log('is Accessed')
     let myPokemons = await db.pokemons.toArray()
-    console.log(myPokemons)
     dispatch({
       type: MY_POKEMONS,
       payload: myPokemons,
@@ -94,8 +89,7 @@ const PokemonState = (props) => {
       setModal(true, 'loading', 'Sedang menangkap pokemon...')
       setTimeout(function () {
         let successRate = Math.random()
-        console.log(successRate)
-        if (successRate > 0.1) {
+        if (successRate > 0.5) {
           // savePokemon()
           setModal(
             true,
@@ -139,7 +133,6 @@ const PokemonState = (props) => {
       .equals(nickname)
       .first()
       .then((result) => {
-        console.log(result)
         if (result === undefined) {
           db.pokemons.add(pokemon).then(async () => {
             setModal(true, 'success', 'Berhasil Menyimpan Pokemon!')
@@ -159,7 +152,6 @@ const PokemonState = (props) => {
 
   //release pokemon from index db
   const releasePokemon = async (name) => {
-    console.log('name being deleted')
     db.pokemons
       .where('name')
       .equals(name)
@@ -168,7 +160,6 @@ const PokemonState = (props) => {
         setModal(true, 'success', `${name} berhasil dilepaskan`)
         getMyPokemons()
         history.push('/bill-pc')
-        console.log('deleted')
       })
       .catch((err) => {
         setModal(true, 'success', 'Oops terjadi kesalahan')
@@ -176,24 +167,9 @@ const PokemonState = (props) => {
   }
 
   const getOwnedNumberOfPokemon = (id) => {
-    console.log(state.myPokemons)
     return state.myPokemons.filter((pokemon) => {
-      console.log(pokemon.id)
-      console.log(id)
       return pokemon.id === id
     }).length
-    // console.log(id)
-    // let number = 0
-    // db.pokemons
-    //   .where('id')
-    //   .equals(parseInt(id))
-    //   .count()
-    //   .then((res) => {
-    //     console.log(res)
-    //     number = res
-    //   })
-    // console.log(number)
-    // return number
   }
 
   return (
