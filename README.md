@@ -3,6 +3,9 @@
 This mini project show's a list of wild pokemons which you can catch as your own and if you're lucky enough you can give them a nickname. 
 This app was built with [Create React App](https://github.com/facebook/create-react-app), using Context API as state management, Emotion.js for styled components, and Dexie.js for local storage. 
 
+## DEMO
+You can test out the application right [here](https://mypoke-app-nine.vercel.app/)
+
 ## Dependencies
 
 - [@emotion/css](https://www.npmjs.com/package/@emotion/css) v.11.1.3
