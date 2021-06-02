@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# MyPoke! Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This mini project show's a list of wild pokemons which you can catch as your own and if you're lucky enough you can give them a nickname. 
+This app was built with [Create React App](https://github.com/facebook/create-react-app), using Context API as state management, Emotion.js for styled components, and Dexie.js for local storage. 
+
+## Dependencies
+
+- [@emotion/css](https://www.npmjs.com/package/@emotion/css) v.11.1.3
+- [@emotion/react](https://www.npmjs.com/package/@emotion/react) v.11.4.0
+- [@emotion/styled](https://www.npmjs.com/package/@emotion/styled) v.11.3.0
+- [axios](https://www.npmjs.com/package/axios): v.0.21.1
+- [dexie](https://www.npmjs.com/package/dexie): v.3.0.3
+- [react-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component): v.1.5.1
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom): v.5.2.0
+- [react-transition-group](https://www.npmjs.com/package/react-transition-group): v.4.4.2
+- [styled-components](https://www.npmjs.com/package/styled-components): v.5.2.1
 
 ## Available Scripts
 
@@ -38,33 +51,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
