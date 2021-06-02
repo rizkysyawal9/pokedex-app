@@ -9,6 +9,7 @@ import {
   DangerButton,
   PrimaryButton,
   ButtonGroup,
+  Title,
 } from 'assets/cssComponent/global'
 
 const Modal = () => {
@@ -32,7 +33,6 @@ const Modal = () => {
     event.preventDefault()
     setNickName('')
     await pokemonContext.savePokemon(nickname)
-    console.log(nickname)
   }
 
   const handleRedirect = (event) => {
@@ -41,7 +41,7 @@ const Modal = () => {
     history.push('/')
   }
 
-  const { show, type, message } = actionContext.modal
+  const { show, type, title, message } = actionContext.modal
   if (!show) {
     return null
   } else {
@@ -49,6 +49,7 @@ const Modal = () => {
       return (
         <ModalGroup>
           <ModalContent>
+            <Title>{title}</Title>
             <p>{message}</p>
             <form onSubmit={handleSubmit}>
               <input
@@ -73,6 +74,8 @@ const Modal = () => {
       return (
         <ModalGroup>
           <ModalContent>
+            <Title>{title}</Title>
+
             <p>{message}</p>
             <PrimaryButton w100 onClick={handleRedirect}>
               Kembali
@@ -84,6 +87,7 @@ const Modal = () => {
       return (
         <ModalGroup>
           <ModalContent>
+            <Title>{title}</Title>
             <p>{message}</p>
             <PrimaryButton w100 onClick={handleClick}>
               Close
@@ -95,6 +99,7 @@ const Modal = () => {
       return (
         <ModalGroup>
           <ModalContent centered>
+            <Title>{title}</Title>
             <img
               src={spinner}
               alt="spinner"

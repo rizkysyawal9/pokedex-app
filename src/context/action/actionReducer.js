@@ -14,13 +14,14 @@ export default (state, action) => {
         loading: false,
       }
     case SET_MODAL:
-      const { show, type, message } = action.payload
+      const { show, type, title, message } = action.payload
       return {
         ...state,
         loading: false,
         modal: {
           show,
           type,
+          title,
           message,
         },
       }

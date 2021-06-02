@@ -61,6 +61,15 @@ export const Badge = styled.div`
   margin-right: ${(props) => (props.last ? '' : '0.5em')};
   transition: all 0.3s ease-out;
 `
+
+export const FlexContent = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media only screen and (max-width: 860px) {
+    flex-direction: column;
+  }
+`
+
 export const FlexGroup = styled.div`
   margin: 1em 0;
   display: flex;
@@ -179,5 +188,8 @@ export const ModalContent = styled.div`
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 70%;
+  width: 40%;
+  @media only screen and (max-width: 860px) {
+    width: 70%;
+  }
 `

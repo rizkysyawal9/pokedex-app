@@ -15,12 +15,13 @@ const ActionState = (props) => {
   const [state, dispatch] = useReducer(ActionReducer, initialState)
 
   //set modals
-  const setModal = (show, type, message) =>
+  const setModal = (show, type, title, message) =>
     dispatch({
       type: SET_MODAL,
       payload: {
         show: show,
         type: type,
+        title: title,
         message: message,
       },
     })

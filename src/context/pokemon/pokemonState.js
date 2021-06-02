@@ -70,7 +70,7 @@ const PokemonState = (props) => {
         payload: payload,
       })
     } catch (err) {
-      setModal(true, 'redirect', err.message)
+      setModal(true, 'redirect', 'Oops...', err.message)
     }
   }
 
@@ -86,7 +86,7 @@ const PokemonState = (props) => {
   //function to catch a pokemon
   const catchPokemon = async () => {
     return new Promise((resolve) => {
-      setModal(true, 'loading', 'Sedang menangkap pokemon...')
+      setModal(true, 'loading', '', 'Sedang menangkap pokemon...')
       setTimeout(function () {
         let successRate = Math.random()
         if (successRate > 0.5) {
@@ -94,10 +94,11 @@ const PokemonState = (props) => {
           setModal(
             true,
             'confirmation',
+            'Yuhu!',
             'Berhasil Menangkap Pokemon! Berikan nama pokemonmu'
           )
         } else {
-          setModal(true, 'failed', 'Gagal Menangkap Pokemon...')
+          setModal(true, 'failed', 'Yahh...', 'Gagal Menangkap Pokemon...')
           // setModal(true, 'failed', 'Gagal Menangkap Pokemon...')
         }
         resolve(successRate)
@@ -117,7 +118,7 @@ const PokemonState = (props) => {
 
   //save pokemon to index db
   const savePokemon = async (name) => {
-    setModal(true, 'loading', 'Sedang menyimpan Pokemon...')
+    setModal(true, 'loading', '', 'Sedang menyimpan Pokemon...')
     let nickname = name.toLowerCase()
     let pokemon = {
       name: nickname,
@@ -135,12 +136,13 @@ const PokemonState = (props) => {
       .then((result) => {
         if (result === undefined) {
           db.pokemons.add(pokemon).then(async () => {
-            setModal(true, 'success', 'Berhasil Menyimpan Pokemon!')
+            setModal(true, 'success', 'Yuhu!', 'Berhasil Menyimpan Pokemon!')
           })
         } else {
           setModal(
             true,
             'confirmation',
+            'Hmmm...',
             `Anda sudah memberikan nama "${nickname}..."`
           )
         }
@@ -157,12 +159,12 @@ const PokemonState = (props) => {
       .equals(name)
       .delete()
       .then(() => {
-        setModal(true, 'success', `${name} berhasil dilepaskan`)
+        setModal(true, 'success', 'Bye Bye!', `${name} berhasil dilepaskan`)
         getMyPokemons()
         history.push('/bill-pc')
       })
       .catch((err) => {
-        setModal(true, 'success', 'Oops terjadi kesalahan')
+        setModal(true, 'success', 'Hmmm...', 'Oops terjadi kesalahan')
       })
   }
 

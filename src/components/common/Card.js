@@ -18,12 +18,11 @@ export default function Card({ pokeId, title, image, isMyPokemon }) {
       <LazyLoadImage
         src={image}
         alt="pokemon"
-        blur
         height="200px"
         width="200px"
       ></LazyLoadImage>
       <h3 className="title">{title}</h3>
-      {!isMyPokemon ? <div>Owned: {owned}</div> : ''}
+      {!isMyPokemon ? <div data-testid="owned">Owned: {owned}</div> : ''}
     </CardGroup>
   )
 }
